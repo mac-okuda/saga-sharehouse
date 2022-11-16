@@ -1,0 +1,33 @@
+---
+layout: layout-contact.njk
+title: お問い合わせ
+permalink: contact/error.html
+---
+
+    <section class="font-body" style="background-color:rgba(35,24,21,0.1);">
+      <div class="py-12 flex justify-center">
+          <h2 class="text-28 font-medium title-font text-gray-900">{{title}}</h2>
+      </div>
+    </section>
+<section class="font-body">
+  <div class="mx-auto max-w-4xl sm:px-24 px-6 sm:py-20 py-10 text-center">
+
+            <h2 class="text-lg font-semibold pb-4">エラーが発生しました</h2>
+            <p class="pb-4">お手数をおかけしますが、再度、お問い合わせフォームからお問い合わせいただくか、<br>下記メールアドレスよりお問い合わせください。</p>
+            {if:$global_errors}
+            <div class="section">
+              <ul>
+                  {loop:$global_errors}
+                  <li><em>{$global_errors[]}</em></li>
+                  {/loop:$global_errors}
+              </ul>
+            </div>
+            {/if:$global_errors}
+
+            <div class="section pt-4 pb-10">
+                <p class="pb-4"><a href="mailto:info@example.com">info@example.com</a></p>
+                <p><a class="bg-gray-600 hover:bg-gray-800 text-white p-4" href="index.php" class="arrow">お問い合わせフォームへ戻る</a></p>
+            </div>
+      </div>
+</section>
+

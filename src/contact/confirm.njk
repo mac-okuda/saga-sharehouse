@@ -1,0 +1,57 @@
+---
+layout: layout-contact.njk
+title: お問い合わせ
+permalink: contact/confirm.html
+---
+
+    <section class="font-sans bg-lightgray">
+      <div class="mx-auto max-w-4xl sm:px-10 px-6 sm:py-20 py-10">
+        <h3 class="text-center text-2xl mb-6 font-body">お問い合わせ</h3>
+        <p class="text-center mb-10">以下の内容でよろしければ、ページ下部の送信ボタンを押してください。<br>
+                誤りがある場合は、前画面に戻って再度ご入力ください。</p>
+        <h4 class="border-b pb-2">お問い合わせ内容</h4>
+
+        <label class="block  mb-4">
+  <span class="text-gray-700">部屋番号</span>
+  <div class="block w-full mt-1 border-gray-300">{$部屋番号.value.nl2br}&nbsp; </div>
+</label>
+<label class="block mb-4">
+  <span class="text-gray-700">入居予定日</span>
+  <div class="block w-full mt-1 border-gray-300">{$入居予定日.value.nl2br}&nbsp;</div>
+</label>
+<label class="block  mb-4">
+  <span class="text-gray-700">お問い合わせ内容</span>
+  <div class="block w-full mt-1 border-gray-300">{$お問い合わせ内容.value.nl2br}&nbsp;</div>
+</label>
+<h3>お客様情報</h3>
+<label class="block mb-4">
+  <span class="text-gray-700">お名前</span>
+  <div class="block w-full mt-1 border-gray-300">{$お名前.value.nl2br}&nbsp;</div>
+</label>
+<label class="block  mb-4">
+  <span class="text-gray-700">メールアドレス</span>
+  <div class="block w-full mt-1 border-gray-300">{$メールアドレス.value.nl2br}&nbsp;</div>
+</label>
+<label class="block  mb-4">
+  <span class="text-gray-700">電話番号</span>
+  <div class="block w-full mt-1 border-gray-300">{$電話番号.value.nl2br}&nbsp;</div>
+</label>
+<label class="block  mb-4">
+  <span class="text-gray-700">ご住所</span>
+  <div class="block w-full mt-1 border-gray-300">{$ご住所.value.nl2br}&nbsp;</div>
+</label>
+        <div class="w-full p-4 text-center border-b">
+          <form method="post" class="inline">
+            {$hiddens}
+            <input type="hidden" name="page_name" value="input">
+            <input type="submit" value="入力画面に戻る" class="bg-gray-600 hover:bg-gray-800 text-white p-4">
+          </form>
+          &nbsp;
+          <form method="post" class="inline">
+            {$hiddens}
+            <input type="hidden" name="page_name" value="finish">
+            <input type="submit" value="送信する" class="bg-gray-600 hover:bg-gray-800 text-white p-4">
+          </form>
+        </div>
+      </div>
+    </section>

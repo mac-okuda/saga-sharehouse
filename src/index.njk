@@ -1,0 +1,118 @@
+---
+layout: layout-home.njk
+title: home
+---
+
+<!-- hero -->
+{% include "layouts/sec-hero.njk" %}
+
+
+<section class="section bg-default">
+
+  <div class="container px-5 py-20 mx-auto">
+    <div class="flex flex-col text-center w-full mb-10">
+      <div class="text-lg font-semibold title-font tracking-widest text-gray-600 mb-2">嵯峨美術大学生 女性専用</div>
+      <h2 class="text-3xl font-medium mb-6 kerning text-base">嵯峨苅分町シェアハウス</h2>
+      <div class="text-lg font-medium prose leading-relaxed">嵐電「車折神社」から約5分ほど歩いたところにあるシェアハウスです。<br>
+        嵯峨美術大学までは徒歩9分と、通学にはとても便利です。<br>
+        近くにはスーパーやコンビニもあり、お買い物も楽々！<br>
+        内覧もして頂けますので、お気軽にお問い合わせ下さいませ！</div>
+    </div>
+    <div class="max-w-6xl mx-auto">
+      <div class="service u-max-width">
+        <div class="service__item">
+          <div class="service__img">
+            <img src="{{ '/assets/images/kariwake01.jpg' | url }}" alt="マーケティング支援事業" class="rounded-md">
+          </div>
+          <div class="service__body rounded-md">
+            <h3 class="service__heading mb-2">嵯峨苅分町シェアハウス</h3>
+            <div class="service__description">
+              <p class="mb-3">〒606-8226 京都府京都市右京区嵯峨苅分町12<br>
+                嵐電「車折神社」徒歩5分</p>
+              <span class="bg-main text-white text-sm font-medium mr-2 px-3 py-1 rounded">共用設備</span>
+              <p class="mt-1">洗濯機：コインランドリー2台<br>
+                インターネット：Wi-Fi<br>
+                エレベーター：無し</p>
+            </div>
+            <div class="service__btn">
+            <a class="btn-base sm:w-auto sm:mb-0 hover:bg-opacity-75" href="{{ '/' | url }}contact/"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#FFFFFF"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6-6-6z"/></svg> 物件へのお問い合わせ
+            </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- 物件写真 -->
+{% include "layouts/sec-01.njk" %}
+
+
+<section class="section" id="sec02">
+  <div class="container px-5 py-20 mx-auto">
+    <h2 class="sec-ttl">設備</h2>
+    <div class="max-w-4xl mx-auto facility">
+      <h3 class="bg-main text-white text-center px-3 py-1 rounded">共有スペース</h3>
+      <table class="">
+        <tbody>
+          <tr>
+            <th>キッチン</th>
+            <td>2口IHクッキングヒーター1台、電子レンジ、トースター、炊飯器、掃除機</td>
+          </tr>
+          <tr>
+            <th>ダイニング</th>
+            <td>ダイニングテーブル、テレビ、テレビ台</td>
+          </tr>
+          <tr>
+            <th>シャワー・トイレ</th>
+            <td>シャワールーム4台、トイレ4台、洗面4台</td>
+          </tr>
+          <tr>
+            <th>その他</th>
+            <td>コインランドリー(1回200円)各階1台ずつ</td>
+          </tr>
+        </tbody>
+      </table>
+      <h3 class="bg-main text-white text-center px-3 py-1 rounded mb-6">個室</h3>
+      <p>エアコン、冷蔵庫、机、椅子、ハンガーラック、カーテン、ゴミ箱、二段ベッド</p>
+      <p>※寝具はご自分でご用意くださいませ。</p>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="sec03">
+  <div class="container px-5 py-20 mx-auto">
+    <h2 class="sec-ttl">間取り</h2>
+    <div class="max-w-4xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-8 mx-auto" id="lightgallery">
+        <div class="w-full rounded">
+          
+            <img src="{{ '/assets/images/f1.png' | url }}" alt="">
+          <div class="text-center font-semibold text-gray-500">1F</div>
+        </div>
+        <div class="w-full rounded">
+          
+            <img src="{{ '/assets/images/f2.png' | url }}" alt="">
+         <div class="text-center font-semibold text-gray-500">2F</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- 部屋情報 -->
+{% include "layouts/sec-04.njk" %}
+
+<!-- 物件の特長 -->
+{% include "layouts/sec-08.njk" %}
+
+<!-- 管理会社 -->
+{% include "layouts/sec-07.njk" %}
+
+
+<!-- アクセス -->
+{% include "layouts/sec-06.njk" %}

@@ -1,0 +1,87 @@
+---
+layout: layout-contact.njk
+title: お問い合わせ
+permalink: contact/input.html
+---
+
+<section class="font-body prose">
+        <form method="post" enctype="multipart/form-data">
+        <input type="hidden" name="csrf_token" value="{$csrf_token}">
+  <h3 class="">お問い合わせ内容</h3>
+  <label class="block  mb-4">
+    <span class="text-gray-700">部屋番号</span> <span class="btn-red ml-2 md:ml-0">必須</span>
+    <select name="部屋番号" class="block w-full mt-1 rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+      <option value="101" {$selected.部屋番号.101}>101</option>
+      <option value="102" {$selected.部屋番号.102}>102</option>
+      <option value="103" {$selected.部屋番号.103}>103</option>
+      <option value="104" {$selected.部屋番号.104}>104</option>
+      <option value="201" {$selected.部屋番号.201}>201</option>
+      <option value="202" {$selected.部屋番号.202}>202</option>
+      <option value="203" {$selected.部屋番号.203}>203</option>
+      <option value="204" {$selected.部屋番号.204}>204</option>
+      <option value="205" {$selected.部屋番号.205}>205</option>
+      <option value="206" {$selected.部屋番号.206}>206</option>
+    </select>
+    <input type="hidden" name="required[]" value="部屋番号">
+      {if:$required.部屋番号}
+     <div class="input-error">{$required.部屋番号}</div>
+       {/if:$required.部屋番号}
+  </label>
+  <label class="block mb-4">
+    <span class="text-gray-700">入居予定日</span> <span class="btn-red ml-2 md:ml-0">必須</span>
+    <input type="text" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="入居予定日" value="{$入居予定日}">
+    <input class="input" type="hidden" name="required[]" value="入居予定日" />
+    {if:$required.入居予定日} <div class="input-error">{$required.入居予定日} </div>
+    {/if:$required.入居予定日}
+  </label>
+  <label class="block  mb-4">
+    <span class="text-gray-700">お問い合わせ内容</span> <span class="btn-red ml-2 md:ml-0">必須</span>
+    <textarea class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" rows="3" name="お問い合わせ内容">{$お問い合わせ内容}</textarea>
+    <input type="hidden" name="required[]" value="お問い合わせ内容">
+    {if:$required.お問い合わせ内容}<div class="input-error">{$required.お問い合わせ内容}</div>
+    {/if:$required.お問い合わせ内容}
+  </label>
+  <h3>お客様情報</h3>
+  <label class="block mb-4">
+    <span class="text-gray-700">お名前</span> <span class="btn-red ml-2 md:ml-0">必須</span>
+    <input type="text" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="お名前" value="{$お名前}">
+    <input class="input" type="hidden" name="required[]" value="お名前" />
+      {if:$required.お名前} <div class="input-error">{$required.お名前} </div>
+  {/if:$required.お名前}
+  </label>
+
+  <label class="block  mb-4">
+    <span class="text-gray-700">メールアドレス</span> <span class="btn-red ml-2 md:ml-0">必須</span>
+    <input type="email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="メールアドレス" value="{$メールアドレス}">
+    <input type="hidden" name="email[]" value="メールアドレス" />
+      {if:$email.メールアドレス}
+       {$email.メールアドレス}
+      {/if:$email.メールアドレス}
+      <input type="hidden" name="required[]" value="メールアドレス" />
+      {if:$required.メールアドレス}<div class="input-error">{$required.メールアドレス}</div>
+      {/if:$required.メールアドレス}
+  </label>
+
+    <label class="block  mb-4">
+    <span class="text-gray-700">電話番号</span> <span class="btn-red ml-2 md:ml-0">必須</span>
+    <input type="text" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="電話番号" value="{$電話番号}">
+    <input class="input" type="hidden" name="required[]" value="電話番号" />
+      {if:$required.電話番号} <div class="input-error">{$required.電話番号} </div>
+  {/if:$required.電話番号}
+  </label>
+
+  <label class="block  mb-4">
+    <span class="text-gray-700">ご住所</span> <span class="btn-red ml-2 md:ml-0">必須</span>
+    <input type="text" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="ご住所" value="{$ご住所}">
+    <input class="input" type="hidden" name="required[]" value="ご住所" />
+    {if:$required.ご住所} <div class="input-error">{$required.ご住所} </div>
+    {/if:$required.ご住所}
+  </label>
+
+  <div class="block  mb-4">
+    <div class="mt-2">
+      <button class="flex mx-auto text-white bg-gray-500 border-0 py-3 px-8 focus:outline-none hover:bg-gray-600 rounded text-lg" id="submit" value="送信">メールを送信する</button>
+    </div>
+  </div>
+  </form>
+</section>

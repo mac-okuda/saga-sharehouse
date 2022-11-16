@@ -1,0 +1,30 @@
+/* Add custom utilities here! */
+
+.h1 {
+  @apply text-3xl font-black;
+}
+
+.bg-blue {
+  background: #124b8c;
+  color: #fff;
+}
+
+.bg-dark {
+  background: #333;
+}
+
+.bg-default {
+  background-color: #F2F8FB;
+}
+
+.text-base {
+ color: #333;
+}
+
+.sec-ttl {
+ @apply text-3xl mb-10 flex justify-center items-center text-center text-base font-medium;
+}
+
+.input-error{
+  @apply text-xs text-red-800;
+}

@@ -1,0 +1,10 @@
+{
+  "sitename": "サンプルサイト",
+  "title": "サンプル",
+  "url": "https://myurl.com/",
+  "description": "これはdescriptionのサンプル用の文章です。これはdescriptionのサンプル用の文章です。これはdescriptionのサンプル用の文章です。",
+  "author": {
+    "name": "Your Name Here",
+    "email": "youremailaddress@example.com"
+  }
+}

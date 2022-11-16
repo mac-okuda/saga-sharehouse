@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  {% block title %}
+  {% if page.url == '/' %}{% set page_title %}{{ site.title }}{% endset %}
+  {% else %}{% set page_title %}{{ title }} | {{ site.title }}{% endset %}
+  {% endif %}
+  <title>{{ page_title }}</title>
+  {% endblock %}
+  <meta name="Description" content="{{ site.description }}">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | url }}" />
+  <link rel="stylesheet" href="{{ '/assets/css/navigation.css' | url }}" />
+  <link rel="stylesheet" href="{{ '/assets/css/develop.css' | url }}" />
+  <link rel="stylesheet" href="{{ '/assets/css/luminous.min.css' | url }}" />
+</head>
+
+<body id="top" class="">
+  <header class="text-gray-600 body-font shadow">
+    <!-- <header class="text-gray-600 body-font shadow" id="header"> -->
+    <div class="lg:container mx-auto flex justify-between p-3 lg:mx-auto flex-row items-center">
+      <a class="flex title-font font-medium items-center text-gray-900 mb-0" href="{{ '/' | url }}">
+        
+        <span class="ml-3 text-xl font-min font-semibold kerning">嵯峨苅分町シェアハウス</span>
+      </a>
+      <div class="openbtn"><span></span><span></span><span></span></div>
+      <nav id="g-nav">
+        <div id="g-nav-list">
+          <ul>
+            <li><a href="{{ '/' | url }}">ホーム</a></li>
+            <li><a href="{{ '/' | url }}#sec01" class="bl-gnav">物件写真</a></li>
+            <li><a href="{{ '/' | url }}#sec02" class="bl-gnav">設備</a></li>
+            <li><a href="{{ '/' | url }}#sec03" class="bl-gnav">間取り</a></li>
+            <li><a href="{{ '/' | url }}#sec04" class="bl-gnav">部屋情報</a></li>
+            <!-- <li><a href="{{ '/' | url }}#sec05" class="bl-gnav">物件概要</a></li> -->
+            <li><a href="{{ '/' | url }}#sec07" class="bl-gnav">管理会社</a></li>
+            <li><a href="{{ '/' | url }}#sec06" class="bl-gnav">アクセス</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    </div>
+  </header>
+  <main class="main">
+    {{ content | safe }}
+  </main>
+  <p id="page-top"><a href="#"></a></p>
+  <footer class="text-white body-font bg-dark mt-20 pb-6">
+    <div class="container px-5 py-10 mx-auto">
+      <p class="font-medium mb-1">京都アパートメント</p>
+<p>〒604-8811 京都府京都市中京区壬生賀陽御所町77-1 近庄ビル2階</p>
+    </div>
+    <div class="footer__copy text-center text-sm">&copy; 2022 Kinsyo. Co.,Ltd All Rights Reserved.</div>
+  </footer>
+
+  <script src="{{ '/assets/js/jquery.min.js' | url }}"></script>
+  <script src="{{ '/assets/js/common.js' | url }}"></script>
+<script src="{{ '/assets/js/luminous.min.js' | url }}"></script>
+  <script>new LuminousGallery(document.querySelectorAll('.zoom-img'));</script>
+  <script>new LuminousGallery(document.querySelectorAll('.zoom-img2'));</script>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+---
+layout: layouts/base.njk
+---
+
+<div class="page-header c-ttl">
+  <div class="container px-5 mx-auto">
+    <div class="max-w-3xl mx-auto">
+      <h1 class="title text-3xl font-semibold text-center">{{ title }}</h1>
+    </div>
+  </div>
+</div>
+
+<div class="page-content prose">
+  <div class="container px-5 xl:px-12 pb-20 mx-auto">
+    <div class="max-w-3xl mx-auto">
+    
+      {{ content | safe }}
+      
+    </div>
+  </div>
+</div>
+
+<div class="page-footer">
+  {% include "layouts/btm-cta.njk" %}
+</div>

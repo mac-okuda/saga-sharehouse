@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  {% block title %}{% if page.url == '/' %}{% set page_title %}{{ site.title }}, {{ site.description }}{% endset %}{% else %}{% set page_title %}{{ title }} | {{ site.title }}{% endset %}{% endif %}<title>{{ page_title }}</title>{% endblock %}
+  <meta name="Description" content="{{ renderData.description or description or metadata.description }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css" integrity="sha256-x8PYmLKD83R9T/sYmJn1j3is/chhJdySyhet/JuHnfY=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | url }}" />
+  <!-- <link rel="stylesheet" href="{{ '/assets/css/develop.css' | url }}"/> -->
+</head>
+
+<body id="top" class="">
+  <section class="bg-gray-800 p-3">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <nav class="flex items-center bg-gray-800 p-3 flex-wrap">
+  <a href="#" class="p-2 mr-4 inline-flex items-center">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="fill-current text-white h-8 w-8 mr-2">
+      <path d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C16.337 6.182 14.976 4.8 12.001 4.8zm-6 7.2c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624 1.177 1.194 2.538 2.576 5.512 2.576 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C10.337 13.382 8.976 12 6.001 12z" />
+    </svg>
+    <span class="text-xl text-white font-bold uppercase tracking-wide">Talwind CSS</span>
+  </a>
+  <button class="text-white inline-flex p-3 hover:bg-gray-900 rounded lg:hidden ml-auto hover:text-white outline-none nav-toggler" data-target="#navigation">
+    <i class="material-icons">menu</i>
+  </button>
+  <div class="hidden top-navbar w-full lg:inline-flex lg:flex-grow lg:w-auto" id="navigation">
+    <div class="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto">
+      <a href="#" class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white">
+        <span>Home</span>
+      </a>
+      <a href="#" class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white">
+        <span>About</span>
+      </a>
+      <a href="#" class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white">
+        <span>Services</span>
+      </a>
+      <a href="#" class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white">
+        <span>Gallery</span>
+      </a>
+      <a href="#" class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white">
+        <span>Products</span>
+      </a>
+      <a href="#" class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white">
+        <span>Contact Us</span>
+      </a>
+    </div>
+  </div>
+</nav>
+    </div>
+    <!-- <div class="container grid-xl hide-md">
+        <header class="navbar">
+          <section class="navbar-section">
+            <a href="{{ '/' | url }}" class="navbar-brand mr-2"><img src="{{ '/assets/images/logo.png' | url }}" alt=""></a>
+          </section>
+          <section class="navbar-section">
+            <a href="{{ '/' | url }}" class="btn btn-menu">ホーム</a>
+            <a href="{{ '/' | url }}service" class="btn btn-menu">サービス案内</a>
+            <a href="{{ '/' | url }}feature" class="btn btn-menu">特長</a>
+            <a href="{{ '/' | url }}works" class="btn btn-menu">事例紹介</a>
+            <a href="{{ '/' | url }}company" class="btn btn-menu">会社情報</a>
+            <a href="{{ '/' | url }}recruit" class="btn btn-menu">採用情報</a>
+            <a href="{{ '/' | url }}blog" class="btn btn-menu">ブログ</a>
+            <a href="{{ '/' | url }}contact" class="btn btn-primary ml-2">お問い合わせ</a>
+          </section>
+        </header>
+      </div>
+      <header class="l-header show-md">
+        <div class="l-drawer">
+          <a href="{{ '/' | url }}" class="l-drawer__logo"><img src="{{ '/assets/images/logo.png' | url }}"></a>
+          <input class="l-drawer__checkbox" id="drawerCheckbox" type="checkbox">
+          <label class="l-drawer__icon" for="drawerCheckbox">
+            <span class="l-drawer__icon-parts"></span>
+          </label>
+          <label class="l-drawer__overlay" for="drawerCheckbox"></label>
+          <nav class="l-drawer__menu">
+            <ul>
+              <li class="l-drawer__item">
+                <a class="l-drawer__item-inner" href="{{ '/' | url }}">ホーム</a>
+              </li>
+              <li class="l-drawer__item">
+                <a class="l-drawer__item-inner" href="{{ '/' | url }}service">サービス案内</a>
+              </li>
+              <li class="l-drawer__item">
+                <a class="l-drawer__item-inner" href="{{ '/' | url }}feature">特長</a>
+              </li>
+              <li class="l-drawer__item">
+                <a class="l-drawer__item-inner" href="{{ '/' | url }}works">事例紹介</a>
+              </li>
+              <li class="l-drawer__item">
+                <a class="l-drawer__item-inner" href="{{ '/' | url }}company">会社情報</a>
+              </li>
+              <li class="l-drawer__item">
+                <a class="l-drawer__item-inner" href="{{ '/' | url }}recruit">採用情報</a>
+              </li>
+              <li class="l-drawer__item">
+                <a class="l-drawer__item-inner" href="{{ '/' | url }}blog">ブログ</a>
+              </li>
+              <li class="l-drawer__item">
+                <a class="l-drawer__item-inner" href="{{ '/' | url }}contact">お問い合わせ</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header> -->
+  </section>
+
+  
+  <main class="main">
+    {{ content | safe }}
+  </main>
+  <div class="pageTopLink">
+    <a href="#top" class="js-scroll">
+      <i class="fa fa-chevron-up"></i>
+    </a>
+  </div>
+  <footer class="text-gray-600 body-font">
+    <div class="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+      <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
+        <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+          </svg>
+          <span class="ml-3 text-xl">Tailblocks</span>
+        </a>
+        <p class="mt-2 text-sm text-gray-500">Air plant banjo lyft occupy retro adaptogen indego</p>
+      </div>
+      <div class="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
+        <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+          <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
+          <nav class="list-none mb-10">
+            <li>
+              <a class="text-gray-600 hover:text-gray-800">First Link</a>
+            </li>
+            <li>
+              <a class="text-gray-600 hover:text-gray-800">Second Link</a>
+            </li>
+            <li>
+              <a class="text-gray-600 hover:text-gray-800">Third Link</a>
+            </li>
+            <li>
+              <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
+            </li>
+          </nav>
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+          <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
+          <nav class="list-none mb-10">
+            <li>
+              <a class="text-gray-600 hover:text-gray-800">First Link</a>
+            </li>
+            <li>
+              <a class="text-gray-600 hover:text-gray-800">Second Link</a>
+            </li>
+            <li>
+              <a class="text-gray-600 hover:text-gray-800">Third Link</a>
+            </li>
+            <li>
+              <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
+            </li>
+          </nav>
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+          <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
+          <nav class="list-none mb-10">
+            <li>
+              <a class="text-gray-600 hover:text-gray-800">First Link</a>
+            </li>
+            <li>
+              <a class="text-gray-600 hover:text-gray-800">Second Link</a>
+            </li>
+            <li>
+              <a class="text-gray-600 hover:text-gray-800">Third Link</a>
+            </li>
+            <li>
+              <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
+            </li>
+          </nav>
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+          <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
+          <nav class="list-none mb-10">
+            <li>
+              <a class="text-gray-600 hover:text-gray-800">First Link</a>
+            </li>
+            <li>
+              <a class="text-gray-600 hover:text-gray-800">Second Link</a>
+            </li>
+            <li>
+              <a class="text-gray-600 hover:text-gray-800">Third Link</a>
+            </li>
+            <li>
+              <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
+            </li>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <div class="bg-gray-100">
+      <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
+        <p class="text-gray-500 text-sm text-center sm:text-left">© 2020 Tailblocks —
+          <a href="https://twitter.com/knyttneve" rel="noopener noreferrer" class="text-gray-600 ml-1" target="_blank">@knyttneve</a>
+        </p>
+        <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
+          <a class="text-gray-500">
+            <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+            </svg>
+          </a>
+          <a class="ml-3 text-gray-500">
+            <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+              <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+            </svg>
+          </a>
+          <a class="ml-3 text-gray-500">
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+            </svg>
+          </a>
+          <a class="ml-3 text-gray-500">
+            <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+              <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+              <circle cx="4" cy="4" r="2" stroke="none"></circle>
+            </svg>
+          </a>
+        </span>
+      </div>
+    </div>
+  </footer>
+  <!--  <footer class="">
+      <div class="footer__body">
+        <div class="container grid-xl">
+          <div class="footer__content">
+            <div class="footer__left">
+              <div><img src="{{ '/assets/images/footer-logo.png' | url }}" alt=""></div>
+              <div>〒604-8166<br>京都市中京区烏丸通三条上る御倉町85-1 KDX烏丸ビル3F</div>
+              
+            </div>
+            <div class="footer__right">
+              <ul class="footer__link">
+                <li>
+                  <a href="{{ '/' | url }}">ホーム</a>
+                </li>
+                <li>
+                  <a href="{{ '/' | url }}service">サービス案内</a>
+                </li>
+                <li>
+                  <a href="{{ '/' | url }}feature">特長</a>
+                </li>
+                <li>
+                  <a href="{{ '/' | url }}works">事例紹介</a>
+                </li>
+              </ul>
+
+              <ul class="footer__link">
+                <li>
+                  <a href="{{ '/' | url }}company">会社情報</a>
+                  <ul class="footer__link is-child">
+                    <li><a href="{{ '/' | url }}company/message.html">トップメッセージ</a></li>
+                    <li><a href="{{ '/' | url }}company/mission.html">企業理念</a></li>
+                    <li><a href="{{ '/' | url }}company/outline.html">会社概要</a></li>
+                    <li><a href="{{ '/' | url }}company/history.html">沿革</a></li>
+                    <li><a href="{{ '/' | url }}company/business.html">事業内容</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <ul class="footer__link">
+                
+                <li>
+                  <a href="{{ '/' | url }}faq">よくある質問</a>
+                </li>
+                <li>
+                  <a href="{{ '/' | url }}recruit">採用情報</a>
+                </li>
+                                <li>
+                  <a href="{{ '/' | url }}information">お知らせ</a>
+                </li>
+                <li>
+                  <a href="{{ '/' | url }}blog">ブログ</a>
+                </li>
+                <li>
+                  <a href="{{ '/' | url }}contact">お問い合わせ</a>
+                </li>
+              </ul>
+
+
+              <ul class="footer__link">
+                <li><div class="sns-box"><a href="#" class="mr-1"><i class="fab fa-2x fa-facebook-square"></i></a> <a href="#"><i class="fab fa-2x fa-twitter-square"></i></a></div></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="container grid-xl">
+          <div class="footer__inner">
+            <ul>
+             
+              <li>
+                <a href="{{ '/' | url }}privacy">個人情報保護方針</a>
+              </li>
+              <li>
+                <a href="{{ '/' | url }}sitemap">サイトマップ</a>
+              </li>
+            </ul>
+            <div class="footer__copy">&copy; {{ site.copyright }} All Rights Reserved.</div>
+          </div>
+        </div>
+      </div>
+    </footer> -->
+  <script src="{{ '/assets/js/jquery.min.js' | url }}"></script>
+  <script src="{{ '/assets/js/common.js' | url }}"></script>
+  <script>
+  $(document).ready(function() {
+    $(".nav-toggler").each(function(_, navToggler) {
+      var target = $(navToggler).data("target");
+      $(navToggler).on("click", function() {
+        $(target).animate({
+          height: "toggle"
+        });
+      });
+    });
+  });
+  </script>
+</body>
+
+</html>

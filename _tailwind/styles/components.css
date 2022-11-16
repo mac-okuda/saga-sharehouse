@@ -1,0 +1,10 @@
+/* Add custom components here! */
+
+.btn-base{
+  @apply inline-flex items-center justify-center w-full px-6 py-3 mb-2 text-lg text-white bg-accent rounded;
+}
+
+.btn-red {
+  @apply text-xs font-semibold inline-block p-0.5 uppercase text-white bg-red-800;
+}
+
