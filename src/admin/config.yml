@@ -32,7 +32,7 @@ collections:
     files:
       - name: site
         label: サイト全般
-        file: src/_data/meta.json
+        file: src/_data/site.json
         editor:
           preview: false
         fields:
