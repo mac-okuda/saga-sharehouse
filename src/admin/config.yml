@@ -1,5 +1,5 @@
 backend:
-  name: github
+  name: git-gateway
   repo: mac-okuda/saga-sharehouse
   branch: main
 
