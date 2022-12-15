@@ -1,0 +1,15 @@
+---
+layout: layouts/base.njk
+---
+
+    {% include "layouts/hero-bgImage.njk" %}
+
+    <section class="section">
+<div class="container px-5 py-24 mx-auto">
+<time datetime="{{ date | readableDate }}">{{ date | readableDate }}</time>
+    {{ content | safe }}
+    
+</div>
+
+</section>
+
