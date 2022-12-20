@@ -7,6 +7,11 @@ layout: layouts/base.njk
     <section class="section">
 <div class="container px-5 py-24 mx-auto">
 <time datetime="{{ date | readableDate }}">{{ date | readableDate }}</time>
+{%- for tag in tags | filterTagList %}
+{%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+<a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>
+{%- endfor %}
+
     {{ content | safe }}
     
 </div>
